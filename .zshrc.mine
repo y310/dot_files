@@ -1,0 +1,66 @@
+export TMPDIR=/tmp
+export SOLR_HOME=/Users/yusuke-mito/work/solr
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin:$HOME/scripts:/Applications/android-sdk-mac_x86/platform-tools/:$HOME/local/node/bin:$PATH
+export MANPATH=/usr/local/share/man:$MANPATH
+export EDITOR=/usr/bin/vim
+
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=200000000
+export RUBY_HEAP_FREE_MIN=2000000
+
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
+
+alias g="git"
+alias gst="g status"
+alias gbr="g branch"
+alias gbra="gbr -a"
+alias gco="g checkout"
+alias gci="g commit"
+alias gcia="g commit -a"
+alias gadd="g add ."
+alias getch="g fetch"
+alias giff="g diff"
+alias giffc="giff --cached"
+alias gsmu="g submodule update -i"
+alias gg="g grep"
+alias wget="nocorrect wget"
+
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward
+
+function gf() { git submodule foreach git $*; git $* }
+
+function alc() {
+  if [ $# != 0 ]; then
+    w3m "http://eow.alc.co.jp/$*/UTF-8/?ref=sa"
+  else
+    w3m "http://www.alc.co.jp/"
+  fi
+}
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "+"
+zstyle ':vcs_info:git:*' unstagedstr "-"
+zstyle ':vcs_info:*' formats '(%r)[%b]'
+zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+
+autoload -Uz is-at-least
+if is-at-least 4.3.10; then
+  zstyle ':vcs_info:git:*' check-for-changes true
+  zstyle ':vcs_info:git:*' stagedstr "+"
+  zstyle ':vcs_info:git:*' unstagedstr "-"
+  zstyle ':vcs_info:*' formats '(%r)[%b] %c%u'
+  zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a] %c%u'
+fi
+precmd () {
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+RPROMPT="%1(v|%F{green}%1v%f|)"
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
