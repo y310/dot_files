@@ -1,20 +1,22 @@
+set nocompatible
 filetype off
-filetype on
-filetype indent on
-filetype plugin on
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'y310/vim-rails'
+Bundle 'Shougo/unite.vim'
+Bundle 'tpope/vim-fugitive'
+
+source $VIMRUNTIME/macros/matchit.vim
+
+filetype plugin indent on
 syntax on
 set number
 set nobackup
-"set lines=60
-"set columns=100
 set expandtab
 set autoindent
-"tabstop(ts) Tab文字を画面上で何文字に展開するか
-set tabstop=2
-"shiftwidth(sw) インデントの幅
-set shiftwidth=2
-"softtabstop(sts) Tabキーを押したときに挿入される空白の量
-set softtabstop=0
 set incsearch
 set hlsearch
 set showcmd
@@ -22,63 +24,67 @@ set laststatus=2
 set showmatch
 set backspace=indent,eol,start
 
-"source $VIMRUNTIME/macros/matchit.vim
-colorscheme desert
+"tabstop(ts) Tab文字を画面上で何文字に展開するか
+set tabstop=2
+"shiftwidth(sw) インデントの幅
+set shiftwidth=2
+"softtabstop(sts) Tabキーを押したときに挿入される空白の量
+set softtabstop=0
 
-nnoremap Y y$
-"nnoremap ub :Unite buffer <CR>
-"nnoremap uf :Unite file <CR>
-"nnoremap ufr :Unite file_mru <CR>
-nmap <C-o> i<CR><Esc>
-cmap <c-z> <c-r>=expand('%:p:r')<cr>
-"cnoremap E UniteWithBufferDir file
+colorscheme desert
 
 " 文字コードと改行コードをステータスラインに表示
 set statusline=%<%F%m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
+" Shift + yで行末までコピー
+nnoremap Y y$
+" Ctrl + o でコマンドモードでカーソル位置から改行
+nmap <C-o> i<CR><Esc>
+cmap <c-z> <c-r>=expand('%:p:r')<cr>
 
-autocmd FileType python setl autoindent
-autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 "if has('persistent_undo')
 "  set undodir=~/.vimundo
 "  set undofile
 "endif
 
+" Unite settings
 " uniteウィンドウの表示位置
-"let g:unite_split_rule = 'botright'
+let g:unite_split_rule = 'botright'
+nnoremap ub :Unite buffer <CR>
+nnoremap uf :Unite file <CR>
+nnoremap ufr :Unite file_mru <CR>
+"cnoremap E UniteWithBufferDir file
 
-" 起動時に有効
+" neocomplcache settings
+"" 起動時に有効
 "let g:neocomplcache_enable_at_startup = 1
-" snippet ファイルの保存先
+"" snippet ファイルの保存先
 "let g:neocomplcache_snippets_dir='~/.vim/snippets'
-" dictionary
+"" dictionary
 "let g:neocomplcache_dictionary_filetype_lists = {
 "      \ 'default' : '',
 "      \ 'objc' : $HOME . '/.vim/dict/objc.dict'
 "      \ }
-" 日本語をキャッシュしない
+"" 日本語をキャッシュしない
 "let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-" 補完候補の数
+"" 補完候補の数
 "let g:neocomplcache_max_list = 5
-" 1番目の候補を自動選択
+"" 1番目の候補を自動選択
 "let g:neocomplcache_enable_auto_select = 1
-" 辞書読み込み
+"" 辞書読み込み
 "noremap  <Space>d. :<C-u>NeoComplCacheCachingDictionary<Enter>
-" <TAB> completion.
+"" <TAB> completion.
 "inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" C-jでオムニ補完
+"" C-jでオムニ補完
 "inoremap <expr> <C-j> &filetype == 'vim' ? "\<C-x>\<C-v>\<C-p>" : "\<C-x>\<C-o>\<C-p>"
-" C-kを押すと行末まで削除
-inoremap <C-k> <C-o>D
-" C-nでneocomplcache補完
+"" C-nでneocomplcache補完
 "inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
-" C-pでkeyword補完
-inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
-" 補完候補が表示されている場合は確定。そうでない場合は改行
+"" C-pでkeyword補完
+"inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
+"" 補完候補が表示されている場合は確定。そうでない場合は改行
 "inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
-" 補完をキャンセル
+"" 補完をキャンセル
 "inoremap <expr><C-e>  neocomplcache#close_popup()
 
 function! RunSpecL()
