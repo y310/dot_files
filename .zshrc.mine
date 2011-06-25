@@ -1,6 +1,5 @@
 export TMPDIR=/tmp
-export SOLR_HOME=/Users/yusuke-mito/work/solr
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin:$HOME/scripts:/Applications/android-sdk-mac_x86/platform-tools/:$HOME/local/node/bin:$PATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin:$HOME/scripts:$PATH
 export MANPATH=/usr/local/share/man:$MANPATH
 export EDITOR=/usr/bin/vim
 
