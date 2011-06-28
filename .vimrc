@@ -51,7 +51,7 @@ cmap <c-z> <c-r>=expand('%:p:r')<cr>
 " Unite settings
 " uniteウィンドウの表示位置
 let g:unite_split_rule = 'botright'
-let g:unite_enable_start_insert = 1
+"let g:unite_enable_start_insert = 1
 nnoremap <silent> 'b :Unite buffer <CR>
 nnoremap <silent> 'f :Unite file <CR>
 nnoremap <silent> 'fr :Unite file_mru <CR>
