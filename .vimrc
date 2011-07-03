@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 Bundle 'y310/vim-rails'
 Bundle 'Shougo/unite.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'cakebaker/scss-syntax.vim'
 
 source $VIMRUNTIME/macros/matchit.vim
 
@@ -52,10 +53,12 @@ cmap <c-z> <c-r>=expand('%:p:r')<cr>
 " uniteウィンドウの表示位置
 let g:unite_split_rule = 'botright'
 "let g:unite_enable_start_insert = 1
+let g:unite_cursor_line_highlight = 'TabLineSel'
 nnoremap <silent> 'b :Unite buffer <CR>
 nnoremap <silent> 'f :Unite file <CR>
 nnoremap <silent> 'fr :Unite file_mru <CR>
 nnoremap <silent> 'r :Unite -buffer-name=register register <CR>
+nnoremap <silent> 'd :UniteWithBufferDir file -buffer-name=files <CR>
 nnoremap <silent> 'a :UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 "cnoremap E UniteWithBufferDir file
 
