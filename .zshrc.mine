@@ -25,6 +25,7 @@ alias giffc="giff --cached"
 alias gsmu="g submodule update -i"
 alias gg="g grep"
 alias wget="nocorrect wget"
+alias ipaddr="ifconfig | grep inet\ "
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward

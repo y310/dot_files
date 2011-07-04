@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 Bundle 'y310/vim-rails'
 Bundle 'Shougo/unite.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
 Bundle 'cakebaker/scss-syntax.vim'
 
 source $VIMRUNTIME/macros/matchit.vim
