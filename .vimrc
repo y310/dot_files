@@ -10,6 +10,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'mattn/gist-vim'
 
 source $VIMRUNTIME/macros/matchit.vim
 
