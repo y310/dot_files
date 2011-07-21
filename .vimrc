@@ -13,6 +13,10 @@ Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'ujihisa/unite-colorscheme'
+Bundle 'tsukkee/unite-help'
+Bundle 'h1mesuke/unite-outline'
+Bundle 'sgur/unite-git_grep'
+Bundle 'basyura/unite-rails'
 
 source $VIMRUNTIME/macros/matchit.vim
 
@@ -65,7 +69,11 @@ nnoremap <silent> 'r :Unite -buffer-name=register register<CR>
 nnoremap <silent> 'd :UniteWithBufferDir file -buffer-name=files<CR>
 nnoremap <silent> 'a :UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> 'cs :Unite colorscheme -auto-preview<CR>
-"cnoremap E UniteWithBufferDir file
+nnoremap <silent> 'rm :Unite rails/model<CR>
+nnoremap <silent> 'rc :Unite rails/controller<CR>
+nnoremap <silent> 'rv :Unite rails/view<CR>
+nnoremap <silent> 'o :Unite outline -vertical -winwidth=40<CR>
+nnoremap <silent> 'gg :Unite vcs_grep<CR>
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
