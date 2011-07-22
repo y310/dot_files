@@ -46,6 +46,8 @@ set shiftwidth=2
 set softtabstop=0
 
 colorscheme desert
+highlight Pmenu ctermbg=0
+highlight PmenuSel ctermbg=5
 
 " 文字コードと改行コードをステータスラインに表示
 set statusline=%<%F%m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
@@ -66,7 +68,6 @@ cmap <c-z> <c-r>=expand('%:p:r')<cr>
 " uniteウィンドウの表示位置
 " let g:unite_split_rule = 'botright'
 "let g:unite_enable_start_insert = 1
-let g:unite_cursor_line_highlight = 'TabLineSel'
 nnoremap <silent> 'b :Unite buffer<CR>
 nnoremap <silent> 'f :Unite file<CR>
 nnoremap <silent> 'fr :Unite file_mru<CR>
