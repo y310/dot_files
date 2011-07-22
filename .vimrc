@@ -18,6 +18,11 @@ Bundle 'h1mesuke/unite-outline'
 Bundle 'sgur/unite-git_grep'
 Bundle 'basyura/unite-rails'
 
+"colorschemes
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'molokai'
+Bundle 'Wombat'
+
 source $VIMRUNTIME/macros/matchit.vim
 
 filetype plugin indent on
@@ -74,6 +79,7 @@ nnoremap <silent> 'rc :Unite rails/controller<CR>
 nnoremap <silent> 'rv :Unite rails/view<CR>
 nnoremap <silent> 'o :Unite outline -vertical -winwidth=40<CR>
 nnoremap <silent> 'gg :Unite vcs_grep<CR>
+nnoremap <silent> 'h :Unite help<CR>
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
