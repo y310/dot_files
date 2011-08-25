@@ -69,15 +69,17 @@ cmap <c-z> <c-r>=expand('%:p:r')<cr>
 " let g:unite_split_rule = 'botright'
 "let g:unite_enable_start_insert = 1
 nnoremap <silent> 'b :Unite buffer<CR>
-nnoremap <silent> 'f :Unite file<CR>
-nnoremap <silent> 'fr :Unite file_mru<CR>
+nnoremap <silent> 'f :Unite file -start-insert<CR>
+nnoremap <silent> 'fr :Unite file_mru -start-insert<CR>
 nnoremap <silent> 'r :Unite -buffer-name=register register<CR>
 nnoremap <silent> 'd :UniteWithBufferDir file -buffer-name=files<CR>
 nnoremap <silent> 'a :UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> 'cs :Unite colorscheme -auto-preview<CR>
-nnoremap <silent> 'rm :Unite rails/model<CR>
-nnoremap <silent> 'rc :Unite rails/controller<CR>
-nnoremap <silent> 'rv :Unite rails/view<CR>
+nnoremap <silent> 'rm :Unite rails/model -start-insert<CR>
+nnoremap <silent> 'rc :Unite rails/controller -start-insert<CR>
+nnoremap <silent> 'rv :Unite rails/view -start-insert<CR>
+nnoremap <silent> 'rh :Unite rails/helper -start-insert<CR>
+nnoremap <silent> 're :Unite rails/extensions -start-insert<CR>
 nnoremap <silent> 'o :Unite outline -vertical -winwidth=40<CR>
 nnoremap <silent> 'gg :Unite vcs_grep<CR>
 nnoremap <silent> 'h :Unite help<CR>
