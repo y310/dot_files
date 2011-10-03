@@ -158,6 +158,11 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
+augroup filetypedetect
+  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+  autocmd BufWinEnter,BufNewFile *_ext.rb set filetype=ruby.ext
+augroup END
+
 function! RunSpecL()
   let file_path = expand("%:p")
   let line_number = line(".")
