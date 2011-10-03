@@ -16,7 +16,7 @@ Bundle 'ujihisa/unite-colorscheme'
 Bundle 'tsukkee/unite-help'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'sgur/unite-git_grep'
-Bundle 'basyura/unite-rails'
+Bundle 'y310/unite-rails'
 
 "colorschemes
 Bundle 'altercation/vim-colors-solarized'
@@ -80,9 +80,11 @@ nnoremap <silent> 'rc :Unite rails/controller -start-insert<CR>
 nnoremap <silent> 'rv :Unite rails/view -start-insert<CR>
 nnoremap <silent> 'rh :Unite rails/helper -start-insert<CR>
 nnoremap <silent> 're :Unite rails/extensions -start-insert<CR>
-nnoremap <silent> 'o :Unite outline -vertical -winwidth=40<CR>
+nnoremap <silent> 'rb :Unite rails/bundled_gem<CR>
+nnoremap <silent> 'o :Unite outline -vertical -winwidth=50<CR>
 nnoremap <silent> 'gg :Unite vcs_grep<CR>
 nnoremap <silent> 'h :Unite help<CR>
+nnoremap <silent> / :Unite line -start-insert<CR>
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -157,6 +159,9 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+"Unite rails execute command
+let g:unite_rails_execute_cmd = '!'
 
 augroup filetypedetect
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
