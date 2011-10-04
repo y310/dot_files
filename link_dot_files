@@ -3,6 +3,7 @@
 ln -s -f ~/dot_files/.zshrc ~/.zshrc
 ln -s -f ~/dot_files/.zshrc.mine ~/.zshrc.mine
 ln -s -f ~/dot_files/.vimrc ~/.vimrc
+ln -s -f ~/dot_files/.vimrc.plugin ~/.vimrc.plugin
 ln -s -f -h  ~/dot_files/.vim ~/.vim
 ln -s -f ~/dot_files/.tmux.conf ~/.tmux.conf
 ln -s -f ~/dot_files/.gitignore_global ~/.gitignore
