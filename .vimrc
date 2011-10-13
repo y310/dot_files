@@ -47,7 +47,7 @@ set softtabstop=0
 
 "行末の空白を可視化
 set list
-set lcs=trail:_
+set lcs=tab:-_,trail:_
 
 colorscheme desert
 highlight Pmenu ctermbg=0
