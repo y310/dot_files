@@ -16,7 +16,7 @@ Bundle 'ujihisa/unite-colorscheme'
 Bundle 'tsukkee/unite-help'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'sgur/unite-git_grep'
-Bundle 'y310/unite-rails'
+Bundle 'basyura/unite-rails'
 
 "colorschemes
 Bundle 'altercation/vim-colors-solarized'
