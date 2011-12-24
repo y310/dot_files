@@ -20,6 +20,9 @@ nnoremap <silent> 'gg :Unite vcs_grep -start-insert<CR>
 nnoremap <silent> 'h :Unite help<CR>
 nnoremap <silent> ? :Unite line -start-insert<CR>
 
+" compile coffee
+nnoremap <silent> 'cc :CoffeeCompile<CR>
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.

@@ -17,6 +17,9 @@ Bundle 'tsukkee/unite-help'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'sgur/unite-git_grep'
 Bundle 'basyura/unite-rails'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
+Bundle 'briancollins/vim-jst'
 
 "colorschemes
 Bundle 'altercation/vim-colors-solarized'
