@@ -99,7 +99,7 @@ linux*)
   ;;
 esac
 
-alias ls="ls -h"
+alias ls="ls -hG"
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
