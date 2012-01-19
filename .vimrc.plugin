@@ -8,8 +8,8 @@ nnoremap <silent> 'fr :Unite file_mru -start-insert<CR>
 nnoremap <silent> 'r :Unite -buffer-name=register register<CR>
 nnoremap <silent> 'd :UniteWithBufferDir file -buffer-name=files<CR>
 nnoremap <silent> 'a :UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent> 'bk :Unite bookmark<CR>
-nnoremap <silent> 'bka :UniteBookmarkAdd<CR>
+nnoremap <silent> 'k :Unite bookmark<CR>
+nnoremap <silent> 's :UniteBookmarkAdd<CR>
 nnoremap <silent> 'cs :Unite colorscheme -auto-preview<CR>
 nnoremap <silent> 'rm :Unite rails/model -start-insert<CR>
 nnoremap <silent> 'rc :Unite rails/controller -start-insert<CR>
