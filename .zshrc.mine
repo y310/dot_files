@@ -30,10 +30,17 @@ alias ipaddr="ifconfig en1 | grep inet\ | awk '{print \$2}' | pbcopy && pbpaste"
 alias lv="nocorrect lv"
 alias bx="bundle exec"
 alias git-root="git rev-parse --show-toplevel"
-alias cdr="cd \`git-root\`"
+#alias cdr="cd \`git-root\`"
+
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-max 5000
+zstyle ':chpwd:*' recent-dirs-default yes
+zstyle ':completion:*' recent-dirs-insert both
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
+bindkey '^x' zaw-cdr
 
 function gf() { git submodule foreach git $*; git $* }
 
@@ -99,3 +106,10 @@ function pcolor() {
   echo
 }
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+if [ -f $HOME/work/zaw/zaw.zsh ]; then
+  source $HOME/work/zaw/zaw.zsh
+else
+  echo 'zaw is not found'
+  echo 'run: cd $HOME/work;git clone git://github.com/zsh-users/zaw.git'
+fi
