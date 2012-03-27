@@ -30,6 +30,7 @@ alias ipaddr="ifconfig en1 | grep inet\ | awk '{print \$2}' | pbcopy && pbpaste"
 alias lv="nocorrect lv"
 alias bx="bundle exec"
 alias git-root="git rev-parse --show-toplevel"
+alias logrep="tail -f log/development.log|grep"
 #alias cdr="cd \`git-root\`"
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
