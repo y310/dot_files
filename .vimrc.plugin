@@ -17,6 +17,8 @@ nnoremap <silent> 'rv :Unite rails/view -start-insert<CR>
 nnoremap <silent> 'rh :Unite rails/helper -start-insert<CR>
 nnoremap <silent> 're :Unite rails/extensions -start-insert<CR>
 nnoremap <silent> 'rb :Unite rails/bundled_gem<CR>
+nnoremap <silent> 'rs :Unite rails/stylesheet<CR>
+nnoremap <silent> 'rj :Unite rails/javascript<CR>
 nnoremap <silent> 'o :Unite outline -vertical -winwidth=50<CR>
 nnoremap <silent> 'gg :Unite vcs_grep -start-insert<CR>
 nnoremap <silent> 'h :Unite help<CR>
