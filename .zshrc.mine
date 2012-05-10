@@ -53,6 +53,9 @@ function alc() {
   fi
 }
 
+function pwgen() {
+  cat /dev/urandom | env LC_CTYPE=C tr -cd \[:graph:\] | fold -w $1 | head -n 1
+}
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' check-for-changes true
