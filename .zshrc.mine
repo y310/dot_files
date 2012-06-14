@@ -44,6 +44,9 @@ bindkey '^S' history-incremental-pattern-search-forward
 bindkey '^x' zaw-cdr
 
 function gf() { git submodule foreach git $*; git $* }
+function cdb() {
+  cd `bundle show $1`
+}
 
 function alc() {
   if [ $# != 0 ]; then
