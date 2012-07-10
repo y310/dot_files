@@ -9,6 +9,7 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=200000000
 export RUBY_HEAP_FREE_MIN=2000000
 
+export LSCOLORS=cxfxgxdxbxegedabagacad
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
 alias grep="grep --color"
