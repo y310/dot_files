@@ -31,6 +31,7 @@ alias lv="nocorrect lv"
 alias bx="bundle exec"
 alias git-root="git rev-parse --show-toplevel"
 alias logrep="tail -f log/development.log|grep"
+alias frep="find . -name "
 #alias cdr="cd \`git-root\`"
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -57,7 +58,7 @@ function alc() {
 }
 
 function pwgen() {
-  cat /dev/urandom | env LC_CTYPE=C tr -cd \[:graph:\] | fold -w $1 | head -n 1
+  cat /dev/random | env LC_CTYPE=C tr -cd \[:alnum:\] | fold -w $1 | head -n 1
 }
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
