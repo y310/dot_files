@@ -9,4 +9,5 @@ ln -s -f ~/dot_files/.tmux.conf ~/.tmux.conf
 ln -s -f ~/dot_files/.gitignore_global ~/.gitignore
 ln -s -f ~/dot_files/.gemrc ~/.gemrc
 ln -s -f ~/dot_files/.pryrc ~/.pryrc
+ln -s -f ~/dot_files/dircolors.256dark ~/dircolors.256dark
 git config --global core.excludesfile ~/.gitignore

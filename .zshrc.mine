@@ -1,7 +1,19 @@
 export TMPDIR=/tmp
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/scripts:$PATH
 export MANPATH=/usr/local/share/man:$MANPATH
 export EDITOR=/usr/bin/vim
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/scripts:$PATH
+
+# use coreutils if it exists
+if brew --prefix coreutils > /dev/null; then
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  eval `dircolors ~/dircolors.256dark`
+  alias ls="ls -h --color"
+else
+  echo 'coreutils is not installed'
+  echo 'run: brew install coreutils'
+  export LSCOLORS=cxfxgxdxbxegedabagacad
+  alias ls="ls -hG"
+fi
 
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
@@ -9,9 +21,15 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=200000000
 export RUBY_HEAP_FREE_MIN=2000000
 
-export LSCOLORS=cxfxgxdxbxegedabagacad
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
+alias la="ls -a"
+alias lf="ls -F"
+alias ll="ls -l"
+alias lla="ls -la"
+alias du="du -h"
+alias df="df -h"
+alias su="su -l"
 alias grep="grep --color"
 alias g="git"
 alias gst="g status"
@@ -33,7 +51,8 @@ alias bx="bundle exec"
 alias git-root="git rev-parse --show-toplevel"
 alias logrep="tail -f log/development.log|grep"
 alias frep="find . -name "
-#alias cdr="cd \`git-root\`"
+alias cdgr="cd \`git-root\`"
+alias tmux="tmux -2"
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
