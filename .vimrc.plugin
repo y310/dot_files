@@ -6,7 +6,7 @@ nnoremap <silent> 'b :Unite buffer<CR>
 nnoremap <silent> 'f :Unite file -start-insert<CR>
 nnoremap <silent> 'fr :Unite file_mru -start-insert<CR>
 nnoremap <silent> 'r :Unite -buffer-name=register register<CR>
-nnoremap <silent> 'd :UniteWithBufferDir file -buffer-name=files<CR>
+nnoremap <silent> 'd :UniteWithBufferDir file -buffer-name=files file/new<CR>
 nnoremap <silent> 'a :UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> 'k :Unite bookmark<CR>
 nnoremap <silent> 's :UniteBookmarkAdd<CR>
