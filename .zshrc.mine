@@ -48,12 +48,13 @@ alias gpl="g log --graph --all --format=format:'%x09%C(bold blue)%h%C(reset) %C(
 alias wget="nocorrect wget"
 alias ipaddr="ifconfig en1 | grep inet\ | awk '{print \$2}' | pbcopy && pbpaste"
 alias lv="nocorrect lv"
-alias bx="bundle exec"
+alias b="bundle exec"
 alias git-root="git rev-parse --show-toplevel"
 alias logrep="tail -f log/development.log|grep"
 alias frep="find . -name "
 alias cdgr="cd \`git-root\`"
 alias tmux="tmux -2"
+alias bspec="bundle exec rspec"
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
@@ -70,6 +71,13 @@ bindkey '^b' zaw-git-branch
 function gf() { git submodule foreach git $*; git $* }
 function cdb() {
   cd `bundle show $1`
+}
+
+function switchdb() {
+  pushd -q config && ln -sf database.yml.$1 database.yml && popd -q
+  if [ "$2" = "-v" ]; then
+    ll config/database.yml
+  fi
 }
 
 function alc() {
