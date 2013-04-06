@@ -6,7 +6,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'sudo.vim'
-Bundle 'y310/vim-rails'
+Bundle 'tpope/vim-rails'
 Bundle 'Shougo/unite.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
