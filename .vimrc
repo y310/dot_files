@@ -21,6 +21,7 @@ Bundle 'basyura/unite-rails'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'briancollins/vim-jst'
+Bundle 'sophacles/vim-processing'
 
 "colorschemes
 Bundle 'altercation/vim-colors-solarized'
