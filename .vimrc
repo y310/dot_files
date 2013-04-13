@@ -76,7 +76,7 @@ cmap <c-z> <c-r>=expand('%:p:r')<cr>
 function! RunSpecL()
   let file_path = expand("%:p")
   let line_number = line(".")
-  execute  ":! " . "source $HOME/.rvm/scripts/rvm; bundle exec rspec " . file_path . " -l " . line_number . " -X "
+  execute  ":! " . "bundle exec rspec " . file_path . " -l " . line_number . " -X "
   unlet line_number
   unlet file_path
 endfunction
@@ -85,7 +85,7 @@ nmap gws :call RunSpecL()<CR>
 function! RunSpec()
   let file_path = expand("%:p")
   let line_number = line(".")
-  execute  ":! " . "source $HOME/.rvm/scripts/rvm; bundle exec rspec " . file_path . " -X "
+  execute  ":! " . "bundle exec rspec " . file_path . " -X "
   unlet line_number
   unlet file_path
 endfunction
