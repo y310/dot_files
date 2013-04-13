@@ -106,6 +106,9 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 "Unite rails execute command
 let g:unite_rails_execute_cmd = '!'
 
+"vim-markdown
+let g:vim_markdown_folding_disabled=1
+
 augroup filetypedetect
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
   autocmd BufWinEnter,BufNewFile *_ext.rb set filetype=ruby.ext
