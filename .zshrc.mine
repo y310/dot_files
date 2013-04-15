@@ -53,6 +53,9 @@ alias frep="find . -name "
 alias cdgr="cd \`git-root\`"
 alias tmux="tmux -2"
 alias bspec="bundle exec rspec"
+alias uncolor='sed -r "s/\x1B\[([0-9]{1,3}((;[0-9]{1,3})*)?)?[m|K]//g"'
+alias hist="ruby -ne \"l=\\\$_;n=l.sub(/^\\s+(\\d+).*/, '\\1').chomp;puts n.rjust(4) + ' ' + '*'*n.to_i\""
+alias aggrefail="ruby -e \"h||=Hash.new('');ARGF.readlines.each{|l|l=l.slice(/(\.\/spec.*?)\s#/, 1);file,line=l.split(':');h[file]+=':'+line.chomp}; h.each{|file,lines|puts file+lines}\""
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
