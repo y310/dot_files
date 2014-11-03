@@ -15,7 +15,7 @@ nnoremap <silent> 'rm :Unite rails/model -start-insert<CR>
 nnoremap <silent> 'rc :Unite rails/controller -start-insert<CR>
 nnoremap <silent> 'rv :Unite rails/view -start-insert<CR>
 nnoremap <silent> 'rh :Unite rails/helper -start-insert<CR>
-nnoremap <silent> 're :Unite rails/extensions -start-insert<CR>
+nnoremap <silent> 're :Unite rails/extension -start-insert<CR>
 nnoremap <silent> 'rb :Unite rails/bundled_gem<CR>
 nnoremap <silent> 'rs :Unite rails/stylesheet -start-insert<CR>
 nnoremap <silent> 'rj :Unite rails/javascript -start-insert<CR>
