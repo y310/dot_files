@@ -2,6 +2,7 @@ export TMPDIR=/tmp
 export MANPATH=/usr/local/share/man:$MANPATH
 export EDITOR=/usr/bin/vim
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/scripts:$PATH
+export GOROOT=/usr/local/opt/go/libexec
 
 # use coreutils if it exists
 if brew --prefix coreutils > /dev/null; then

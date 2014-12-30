@@ -30,6 +30,10 @@ Bundle 'Wombat'
 
 source $VIMRUNTIME/macros/matchit.vim
 
+if $GOROOT != ''
+  set rtp+=$GOROOT/misc/vim
+endif
+
 filetype plugin indent on
 syntax on
 set number
@@ -66,7 +70,6 @@ nnoremap Y y$
 " Ctrl + o でコマンドモードでカーソル位置から改行
 nmap <C-o> i<CR><Esc>
 cmap <c-z> <c-r>=expand('%:p:r')<cr>
-
 
 "if has('persistent_undo')
 "  set undodir=~/.vimundo
