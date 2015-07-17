@@ -21,6 +21,8 @@ nnoremap <silent> 'rs :Unite rails/stylesheet -start-insert<CR>
 nnoremap <silent> 'rj :Unite rails/javascript -start-insert<CR>
 nnoremap <silent> 'rl :Unite rails/lib -start-insert<CR>
 nnoremap <silent> 'rp :Unite rails/spec -start-insert<CR>
+nnoremap <silent> 'ra :Unite rails/mailer -start-insert<CR>
+nnoremap <silent> 'rf :Unite rails/config -start-insert<CR>
 nnoremap <silent> 'o :Unite outline -vertical -winwidth=50<CR>
 nnoremap <silent> 'gg :Unite vcs_grep -start-insert<CR>
 nnoremap <silent> 'h :Unite help<CR>
