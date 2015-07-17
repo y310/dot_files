@@ -22,6 +22,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'briancollins/vim-jst'
 Bundle 'sophacles/vim-processing'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'vim-ruby/vim-ruby'
 
 "colorschemes
 Bundle 'altercation/vim-colors-solarized'
