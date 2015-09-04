@@ -4,6 +4,9 @@ export EDITOR=/usr/bin/vim
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/scripts:$PATH
 export GOROOT=/usr/local/opt/go/libexec
 
+# Add this to fix tmux but it might cause problem somewhere
+export LC_ALL=ja_JP.UTF-8
+
 # use coreutils if it exists
 if brew --prefix coreutils > /dev/null; then
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
