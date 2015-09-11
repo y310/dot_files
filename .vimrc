@@ -24,6 +24,7 @@ Bundle 'sophacles/vim-processing'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'Shougo/neomru.vim'
+Bundle 'Shougo/vimproc.vim'
 
 "colorschemes
 Bundle 'altercation/vim-colors-solarized'
