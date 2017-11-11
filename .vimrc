@@ -26,6 +26,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'Shougo/neomru.vim'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'isRuslan/vim-es6'
+Bundle 'maxmellon/vim-jsx-pretty'
 
 "colorschemes
 Bundle 'altercation/vim-colors-solarized'
