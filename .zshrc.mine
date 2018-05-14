@@ -62,7 +62,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 bindkey '^x' zaw-cdr
 bindkey '^g' zaw-git-files
-bindkey '^b' zaw-git-branch
+bindkey '^b' zaw-git-branches
 
 function gf() { git submodule foreach git $*; git $* }
 function cdb() {
@@ -118,7 +118,7 @@ function precmd() {
     d=`expr $d - $COMMAND_TIME`
     if [ "$d" -ge "10" ] ; then
       COMMAND="$COMMAND "
-      growlnotify -t "${${(s: :)COMMAND}[1]}" -m "$COMMAND"
+      osascript -e "display notification \"$COMMAND\" with title \"${${(s: :)COMMAND}[1]}\""
     fi
   fi
   COMMAND="0"
