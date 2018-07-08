@@ -1,39 +1,37 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'sudo.vim'
-Bundle 'tpope/vim-rails'
-Bundle 'Shougo/unite.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'ujihisa/unite-colorscheme'
-Bundle 'tsukkee/unite-help'
-Bundle 'Shougo/unite-outline'
-Bundle 'sgur/unite-git_grep'
-Bundle 'negipo/unite-rails'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'pangloss/vim-javascript'
-Bundle 'briancollins/vim-jst'
-Bundle 'sophacles/vim-processing'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'Shougo/neomru.vim'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'isRuslan/vim-es6'
-Bundle 'maxmellon/vim-jsx-pretty'
+call plug#begin('~/.vim/plugged')
+Plug 'vim-scripts/sudo.vim'
+Plug 'tpope/vim-rails'
+Plug 'Shougo/unite.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'Shougo/neocomplcache'
+Plug 'ujihisa/unite-colorscheme'
+Plug 'tsukkee/unite-help'
+Plug 'Shougo/unite-outline'
+Plug 'sgur/unite-git_grep'
+Plug 'negipo/unite-rails'
+Plug 'kchmck/vim-coffee-script'
+Plug 'pangloss/vim-javascript'
+Plug 'briancollins/vim-jst'
+Plug 'sophacles/vim-processing'
+Plug 'plasticboy/vim-markdown'
+Plug 'vim-ruby/vim-ruby'
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'elixir-lang/vim-elixir'
+Plug 'isRuslan/vim-es6'
+Plug 'maxmellon/vim-jsx-pretty'
 
 "colorschemes
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'molokai'
-Bundle 'Wombat'
-Bundle 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-scripts/molokai'
+Plug 'vim-scripts/Wombat'
+Plug 'chriskempson/base16-vim'
+call plug#end()
 
 source $VIMRUNTIME/macros/matchit.vim
 
