@@ -33,6 +33,7 @@ Bundle 'maxmellon/vim-jsx-pretty'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'molokai'
 Bundle 'Wombat'
+Bundle 'chriskempson/base16-vim'
 
 source $VIMRUNTIME/macros/matchit.vim
 
@@ -53,6 +54,10 @@ set laststatus=2
 set showmatch
 set backspace=indent,eol,start
 
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 "tabstop(ts) Tab文字を画面上で何文字に展開するか
 set tabstop=2
 "shiftwidth(sw) インデントの幅
@@ -64,7 +69,7 @@ set softtabstop=0
 set list
 set lcs=tab:-_,trail:_
 
-colorscheme desert
+colorscheme base16-bright
 highlight Pmenu ctermbg=0
 highlight PmenuSel ctermbg=5
 
