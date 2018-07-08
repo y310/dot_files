@@ -1,6 +1,6 @@
 export TMPDIR=/tmp
 export MANPATH=/usr/local/share/man:$MANPATH
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/scripts:$PATH
 export GOROOT=/usr/local/opt/go/libexec
 
@@ -57,6 +57,7 @@ alias hist="ruby -ne \"l=\\\$_;n=l.sub(/^\\s+(\\d+).*/, '\\1').chomp;puts n.rjus
 alias aggrefail="ruby -e \"h||=Hash.new('');ARGF.readlines.each{|l|l=l.slice(/(\.\/spec.*?)\s#/, 1);file,line=l.split(':');h[file]+=':'+line.chomp}; h.each{|file,lines|puts file+lines}\""
 alias comma_join="ruby -e \"puts ARGF.to_a.map(&:strip).join(',')\""
 alias comma_join_s="ruby -e \"puts ARGF.to_a.map(&:strip).map {|s| %!'#{s}'!}.join(',')\""
+alias vi="vim"
 
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
