@@ -1,41 +1,37 @@
-" Unite settings
-" uniteウィンドウの表示位置
-" let g:unite_split_rule = 'botright'
-"let g:unite_enable_start_insert = 1
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts = '--nocolor --nogroup'
-let g:unite_source_grep_max_candidates = 200
-let g:unite_source_grep_recursive_opt = ''
+call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#map('insert', '<C-{>', '<denite:enter_mode:normal>', 'noremap')
 
-nnoremap <silent> 'b :Unite buffer<CR>
-nnoremap <silent> 'f :Unite file -start-insert<CR>
-nnoremap <silent> 'fr :Unite file_mru -start-insert<CR>
-nnoremap <silent> 'r :Unite -buffer-name=register register<CR>
-nnoremap <silent> 'd :UniteWithBufferDir file -buffer-name=files file/new<CR>
-nnoremap <silent> 'a :UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent> 'k :Unite bookmark<CR>
-nnoremap <silent> 's :UniteBookmarkAdd<CR>
-nnoremap <silent> 'cs :Unite colorscheme -auto-preview<CR>
-nnoremap <silent> 'rm :Unite rails/model -start-insert<CR>
-nnoremap <silent> 'rc :Unite rails/controller -start-insert<CR>
-nnoremap <silent> 'rv :Unite rails/view -start-insert<CR>
-nnoremap <silent> 'rh :Unite rails/helper -start-insert<CR>
-nnoremap <silent> 're :Unite rails/extension -start-insert<CR>
-nnoremap <silent> 'rb :Unite rails/bundled_gem<CR>
-nnoremap <silent> 'rs :Unite rails/stylesheet -start-insert<CR>
-nnoremap <silent> 'rj :Unite rails/javascript -start-insert<CR>
-nnoremap <silent> 'rl :Unite rails/lib -start-insert<CR>
-nnoremap <silent> 'rp :Unite rails/spec -start-insert<CR>
-nnoremap <silent> 'ra :Unite rails/mailer -start-insert<CR>
-nnoremap <silent> 'rf :Unite rails/config -start-insert<CR>
-nnoremap <silent> 'o :Unite outline -vertical -winwidth=50<CR>
-nnoremap <silent> 'gg :Unite vcs_grep -start-insert<CR>
-nnoremap <silent> 'h :Unite help<CR>
-nnoremap <silent> 'g :Unite file_rec/git -start-insert<CR>
-nnoremap <silent> ? :Unite line -start-insert<CR>
+call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+call denite#custom#var('file/rec/git', 'command',
+      \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
-" compile coffee
-nnoremap <silent> 'cc :CoffeeCompile<CR>
+call denite#custom#option('_', 'highlight_mode_insert', 'Search')
+call denite#custom#option('_', 'direction', 'top')
+call denite#custom#option('_', 'cursor_wrap', 'true')
+call denite#custom#option('_', 'highlight_mode_normal', 'CursorLine')
+
+nnoremap <silent> 'b :Denite buffer -mode=normal<CR>
+nnoremap <silent> 'fr :Denite file_mru -mode=normal<CR>
+nnoremap <silent> 'd :DeniteBufferDir file/rec/git -buffer-name=files -mode=normal<CR>
+nnoremap <silent> 'g :DeniteProjectDir file/rec/git -buffer-name=files -mode=insert<CR>
+nnoremap <silent> 'cs :Denite colorscheme -auto-preview -mode=normal<CR>
+nnoremap <silent> 'rm :Denite rails/model -mode=insert<CR>
+nnoremap <silent> 'rc :Denite rails/controller -mode=insert<CR>
+nnoremap <silent> 'rv :Denite rails/view -mode=insert<CR>
+nnoremap <silent> 'rh :Denite rails/helper -mode=insert<CR>
+nnoremap <silent> 're :Denite rails/extension -mode=insert<CR>
+nnoremap <silent> 'rb :Denite rails/bundled_gem<CR>
+nnoremap <silent> 'rs :Denite rails/stylesheet -mode=insert<CR>
+nnoremap <silent> 'rj :Denite rails/javascript -mode=insert<CR>
+nnoremap <silent> 'rl :Denite rails/lib -mode=insert<CR>
+nnoremap <silent> 'rp :Denite rails/spec -mode=insert<CR>
+nnoremap <silent> 'ra :Denite rails/mailer -mode=insert<CR>
+nnoremap <silent> 'rf :Denite rails/config -mode=insert<CR>
+nnoremap <silent> 'o :Denite outline -vertical -winwidth=50<CR>
+nnoremap <silent> 'gg :Denite git-grep:'' -mode=insert<CR>
+nnoremap <silent> 'h :Denite help<CR>
+nnoremap <silent> ? :Denite line -mode=insert<CR>
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
