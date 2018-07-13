@@ -6,7 +6,7 @@ ln -s -f ~/dot_files/.vimrc ~/.vimrc
 ln -s -f ~/dot_files/.vimrc.plugin ~/.vimrc.plugin
 /bin/ln -s -f -h ~/dot_files/.vim ~/.vim
 ln -s -f ~/dot_files/.tmux.conf ~/.tmux.conf
-ln -s -f ~/dot_files/.tmux.local.conf ~/.tmux.local.conf
+ln -s -f ~/dot_files/.tmux.conf.local ~/.tmux.conf.local
 ln -s -f ~/dot_files/powerline ~/.config/powerline
 ln -s -f ~/dot_files/.gitignore_global ~/.gitignore
 ln -s -f ~/dot_files/.gemrc ~/.gemrc
