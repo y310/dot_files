@@ -6,6 +6,14 @@ call denite#custom#alias('source', 'file/rec/git', 'file/rec')
 call denite#custom#var('file/rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
+call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'default_opts',
+      \ ['--vimgrep', '--no-heading'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+
 call denite#custom#option('_', 'highlight_mode_insert', 'Search')
 call denite#custom#option('_', 'direction', 'top')
 call denite#custom#option('_', 'cursor_wrap', 'true')
@@ -13,23 +21,22 @@ call denite#custom#option('_', 'highlight_mode_normal', 'CursorLine')
 
 nnoremap <silent> 'b :Denite buffer -mode=normal<CR>
 nnoremap <silent> 'fr :Denite file_mru -mode=normal<CR>
-nnoremap <silent> 'd :DeniteBufferDir file/rec/git -buffer-name=files -mode=normal<CR>
+nnoremap <silent> 'd :DeniteBufferDir file/rec/git file:new -buffer-name=files -mode=normal<CR>
 nnoremap <silent> 'g :DeniteProjectDir file/rec/git -buffer-name=files -mode=insert<CR>
+nnoremap <silent> 'ff :Denite file -buffer-name=files -mode=normal<CR>
 nnoremap <silent> 'cs :Denite colorscheme -auto-preview -mode=normal<CR>
-nnoremap <silent> 'rm :Denite rails/model -mode=insert<CR>
-nnoremap <silent> 'rc :Denite rails/controller -mode=insert<CR>
-nnoremap <silent> 'rv :Denite rails/view -mode=insert<CR>
-nnoremap <silent> 'rh :Denite rails/helper -mode=insert<CR>
-nnoremap <silent> 're :Denite rails/extension -mode=insert<CR>
-nnoremap <silent> 'rb :Denite rails/bundled_gem<CR>
-nnoremap <silent> 'rs :Denite rails/stylesheet -mode=insert<CR>
-nnoremap <silent> 'rj :Denite rails/javascript -mode=insert<CR>
-nnoremap <silent> 'rl :Denite rails/lib -mode=insert<CR>
-nnoremap <silent> 'rp :Denite rails/spec -mode=insert<CR>
-nnoremap <silent> 'ra :Denite rails/mailer -mode=insert<CR>
-nnoremap <silent> 'rf :Denite rails/config -mode=insert<CR>
+nnoremap <silent> 'rm :Denite rails:model -mode=insert<CR>
+nnoremap <silent> 'rc :Denite rails:controller -mode=insert<CR>
+nnoremap <silent> 'rv :Denite rails:view -mode=insert<CR>
+nnoremap <silent> 'rh :Denite rails:helper -mode=insert<CR>
+nnoremap <silent> 'rj :Denite rails:javascript -mode=insert<CR>
+nnoremap <silent> 'rl :Denite rails:lib -mode=insert<CR>
+nnoremap <silent> 'rp :Denite rails:spec -mode=insert<CR>
+nnoremap <silent> 'rf :Denite rails:config -mode=insert<CR>
+nnoremap <silent> 'rg :Denite rails:graphql -mode=insert<CR>
+nnoremap <silent> 'rs :Denite rails:service -mode=insert<CR>
 nnoremap <silent> 'o :Denite outline -vertical -winwidth=50<CR>
-nnoremap <silent> 'gg :Denite git-grep:'' -mode=insert<CR>
+nnoremap <silent> 's :Denite grep -mode=normal<CR>
 nnoremap <silent> 'h :Denite help<CR>
 nnoremap <silent> ? :Denite line -mode=insert<CR>
 
