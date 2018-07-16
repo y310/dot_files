@@ -59,61 +59,28 @@ alias comma_join="ruby -e \"puts ARGF.to_a.map(&:strip).join(',')\""
 alias comma_join_s="ruby -e \"puts ARGF.to_a.map(&:strip).map {|s| %!'#{s}'!}.join(',')\""
 alias vi="vim"
 
+function peco-git-checkout() {
+  git checkout -q $(git branch | sed 's/*//g' | sed 's/ //g' | peco)
+  zle accept-line
+}
+
+zle -N peco-git-checkout
+
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
-bindkey '^x' zaw-cdr
-bindkey '^g' zaw-git-files
-bindkey '^b' zaw-git-branches
+bindkey '^b' peco-git-checkout
 
-function gf() { git submodule foreach git $*; git $* }
 function cdb() {
   cd `bundle show $1`
-}
-
-function switchdb() {
-  pushd -q config && ln -sf database.yml.$1 database.yml && popd -q
-  if [ "$2" = "-v" ]; then
-    ll config/database.yml
-  fi
-}
-
-function alc() {
-  if [ $# != 0 ]; then
-    w3m "http://eow.alc.co.jp/$*/UTF-8/?ref=sa"
-  else
-    w3m "http://www.alc.co.jp/"
-  fi
 }
 
 function pwgen() {
   cat /dev/random | env LC_CTYPE=C tr -cd \[:alnum:\] | fold -w $1 | head -n 1
 }
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "+"
-zstyle ':vcs_info:git:*' unstagedstr "-"
-zstyle ':vcs_info:*' formats '(%r)[%b]'
-zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
-
-autoload -Uz is-at-least
-if is-at-least 4.3.10; then
-  zstyle ':vcs_info:git:*' check-for-changes true
-  zstyle ':vcs_info:git:*' stagedstr "+"
-  zstyle ':vcs_info:git:*' unstagedstr "-"
-  zstyle ':vcs_info:*' formats '(%r)[%b] %c%u'
-  zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a] %c%u'
-fi
-precmd () {
-  psvar=()
-  LANG=en_US.UTF-8 vcs_info
-  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-RPROMPT="%1(v|%F{green}%1v%f|)"
 
 local COMMAND=""
 local COMMAND_TIME=""
-function precmd() {
+precmd_notification() {
   if [ "$COMMAND_TIME" -ne "0" ] ; then
     local d=`date +%s`
     d=`expr $d - $COMMAND_TIME`
@@ -125,6 +92,8 @@ function precmd() {
   COMMAND="0"
   COMMAND_TIME="0"
 }
+add-zsh-hook precmd precmd_notification
+
 function preexec () {
   COMMAND="${1}"
   if [ "`perl -e 'print($ARGV[0]=~/ssh|^vi|^tig/)' $COMMAND`" -ne 1 ] ; then
@@ -142,10 +111,3 @@ function pcolor() {
   echo
 }
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
-if [ -f $HOME/work/zaw/zaw.zsh ]; then
-  source $HOME/work/zaw/zaw.zsh
-else
-  echo 'zaw is not found'
-  echo 'run: cd $HOME/work;git clone git://github.com/zsh-users/zaw.git'
-fi
