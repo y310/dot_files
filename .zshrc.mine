@@ -8,7 +8,12 @@ export GOROOT=/usr/local/opt/go/libexec
 export LC_ALL=ja_JP.UTF-8
 
 # use coreutils if it exists
-coreutils_path=`brew --prefix coreutils`
+if [ -e /usr/local/opt/coreutils ]; then
+  coreutils_path=/usr/local/opt/coreutils
+else
+  coreutils_path=`brew --prefix coreutils`
+fi
+
 if [ "$coreutils_path" ]; then
   export PATH="$coreutils_path/libexec/gnubin:$PATH"
   eval `dircolors ~/dircolors.256dark`
