@@ -16,7 +16,7 @@ autoload colors
 colors
 setopt prompt_subst
 
-zstyle ':vcs_info:*' formats '%F{white}|%F{green}%b%f' #通常
+zstyle ':vcs_info:*' formats '%F{white}|%F{magenta}%b%f' #通常
 
 precmd_vcs_info () {
   vcs_info
