@@ -27,6 +27,8 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'elixir-lang/vim-elixir'
 Plug 'isRuslan/vim-es6'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'posva/vim-vue'
+Plug 'fatih/vim-go'
 
 "colorschemes
 Plug 'altercation/vim-colors-solarized'
