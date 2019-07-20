@@ -40,6 +40,11 @@ nnoremap <silent> 's :Denite grep -mode=normal<CR>
 nnoremap <silent> 'h :Denite help<CR>
 nnoremap <silent> ? :Denite line -mode=insert<CR>
 
+" vim-go
+let g:go_fmt_command = "goimports"
+nnoremap <silent> 'gb :GoBuild<CR>
+nnoremap <silent> 'gf :GoFmt<CR>
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.

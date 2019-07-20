@@ -69,7 +69,7 @@ set softtabstop=0
 
 "行末の空白を可視化
 set list
-set lcs=tab:-_,trail:_
+set lcs=tab:\ \ ,trail:_
 
 colorscheme base16-bright
 "highlight Pmenu ctermbg=0
