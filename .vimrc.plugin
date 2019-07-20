@@ -37,7 +37,7 @@ endfunction
 
 nnoremap <silent> 'b :Denite buffer<CR>
 nnoremap <silent> 'fr :Denite file_mru<CR>
-nnoremap <silent> 'd :DeniteBufferDir file/rec/git file:new -buffer-name=files<CR>
+nnoremap <silent> 'd :DeniteBufferDir file file:new -buffer-name=files<CR>
 nnoremap <silent> 'g :DeniteProjectDir file/rec/git -buffer-name=files<CR>
 nnoremap <silent> 'ff :Denite file -buffer-name=files<CR>
 nnoremap <silent> 'cs :Denite colorscheme -auto-action=preview<CR>

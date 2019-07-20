@@ -1,3 +1,10 @@
-# Setup tmux-powerline
+# Install .tmux
 
-Install patched font from [here](https://gist.github.com/1838072)
+```sh
+cd
+git clone git@github.com:gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+ln -s -f dot_files/.tmux.conf.local .tmux.conf.local
+```
+
+Install patched font https://github.com/powerline/fonts/tree/master/SourceCodePro
