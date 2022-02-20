@@ -8,24 +8,15 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/sudo.vim'
 Plug 'tpope/vim-rails'
-Plug 'Shougo/denite.nvim'
-Plug 'Shougo/neomru.vim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'himanoa/denite-git-grep'
-Plug 'y310/denite-rails'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-haml'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'Shougo/neocomplcache'
 Plug 'kchmck/vim-coffee-script'
 Plug 'pangloss/vim-javascript'
 Plug 'briancollins/vim-jst'
 Plug 'sophacles/vim-processing'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-ruby/vim-ruby'
-Plug 'Shougo/neomru.vim'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'elixir-lang/vim-elixir'
 Plug 'isRuslan/vim-es6'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -33,6 +24,8 @@ Plug 'posva/vim-vue'
 Plug 'fatih/vim-go'
 Plug 'slim-template/vim-slim'
 Plug 'hashivim/vim-terraform'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 "colorschemes
 Plug 'altercation/vim-colors-solarized'

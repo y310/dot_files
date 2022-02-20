@@ -3,6 +3,7 @@ export MANPATH=/usr/local/share/man:$MANPATH
 export EDITOR=/usr/local/bin/vim
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/scripts:$PATH
 export GOROOT=/usr/local/opt/go/libexec
+export FZF_DEFAULT_OPTS="--layout=reverse --cycle"
 
 # Add this to fix tmux but it might cause problem somewhere
 export LC_ALL=ja_JP.UTF-8
