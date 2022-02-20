@@ -26,6 +26,7 @@ Plug 'slim-template/vim-slim'
 Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "colorschemes
 Plug 'altercation/vim-colors-solarized'
