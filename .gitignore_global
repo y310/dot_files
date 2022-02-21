@@ -1,7 +1,7 @@
 doc/tags
-*.swp
 .DS_Store
+*.swp
 *.swn
 *.swo
-.python-version
-.ruby-version
+.vscode
+.idea
