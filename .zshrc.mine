@@ -78,10 +78,6 @@ function cdb() {
   cd `bundle show $1`
 }
 
-function pwgen() {
-  cat /dev/random | env LC_CTYPE=C tr -cd \[:alnum:\] | fold -w $1 | head -n 1
-}
-
 local COMMAND=""
 local COMMAND_TIME=""
 precmd_notification() {
