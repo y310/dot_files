@@ -19,11 +19,6 @@ nnoremap <silent> 'rd :GFiles app/decorator<CR>
 nnoremap <silent> 'ra :GFiles app/mailer<CR>
 nnoremap <silent> ? :BLines<CR>
 
-" vim-go
-let g:go_fmt_command = "goimports"
-nnoremap <silent> 'gb :GoBuild<CR>
-nnoremap <silent> 'gf :GoFmt<CR>
-
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -218,3 +213,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" coc-go
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')

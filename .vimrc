@@ -21,7 +21,6 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'isRuslan/vim-es6'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'posva/vim-vue'
-Plug 'fatih/vim-go'
 Plug 'slim-template/vim-slim'
 Plug 'hashivim/vim-terraform'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
