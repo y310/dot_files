@@ -310,4 +310,4 @@ bind v split-window -h
 # move status line to top
 #set -g status-position top
 
-set-option -g default-shell /usr/local/bin/zsh
+set-option -g default-shell /opt/homebrew/bin/zsh
