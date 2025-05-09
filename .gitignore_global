@@ -5,3 +5,4 @@ doc/tags
 *.swo
 .vscode
 .idea
+.mito
